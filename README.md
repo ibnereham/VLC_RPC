@@ -86,6 +86,7 @@ Now, every time you start Windows, the manually compiled `VLC_RPC.exe` will run 
    - Click on "New Application" and give it a name ("VLC MEDIA PLAYER" is a good choice).
    - Navigate to "Rich Presence" and set up the necessary assets (like icons).
    - Copy the "Client ID" from the application page.
+   - Goto the "config.py" and replace the "here" in `TOKEN="here"` to the Client ID you have copied from the application page.
 
 2. **Run the application:**
    - If using the script, run `VLC_RPC.py`.
