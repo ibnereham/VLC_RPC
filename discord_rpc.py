@@ -20,6 +20,9 @@ class DiscordRPC:
     def update_status(self, title):
         """Update Discord status with VLC title."""
         if self.connected and title:
+            # Remove anything before and including "|"
+            title = re.sub(r".*\|", "", title).strip()
+
             # Remove file extensions
             title = re.sub(r"\.[a-zA-Z0-9]+$", "", title)  
 
@@ -47,7 +50,7 @@ class DiscordRPC:
                 print(f"Error updating Discord status: {e}")
                 self.connected = False
                 self.rpc.close()
-
+                
     def clear_status(self):
         """Clear Discord Rich Presence."""
         if self.connected:
